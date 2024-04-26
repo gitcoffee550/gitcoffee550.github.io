@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>藝信股份有限公司</title>
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../img/icon/171fe8031297a.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../img/icon/de97a22fdae50.png">
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../img/icon/2860691a7fd4a.png">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../img/icon/76592e6aaa429.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../img/icon/e1fd9a0ba4bf5.png">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../img/icon/63da38a32911f.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../img/icon/f87d30e8b2bc8.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../img/icon/9baadf28d133c.png">
+  <link rel="icon" type="image/png" href="../img/icon/53c0af35cfa3f.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="../img/icon/749cf28606816.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../img/icon/9bd46988fcff0.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../img/icon/422b9a2c4d1a1.png" sizes="128x128">
+  <link rel="icon" type="image/png" href="../img/icon/80dec003351be.png" sizes="196x196">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      padding-bottom: 0px !important;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    /* slider */
+    .scrolling-wrapper {
+      display: flex;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .scrolling-content {
+      display: flex;
+      width: calc(300% + 800px);
+      /* Adjust based on your content */
+      animation: scroll 30s linear infinite;
+    }
+
+    .scrolling-wrapper img {
+      height: 200px;
+      /* Fixed height for all images */
+      width: auto;
+      /* Auto width to maintain aspect ratio */
+      object-fit: cover;
+      /* Cover the container without distorting the image */
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-200vw);
+        /* Adjust based on your content */
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* PC 默认样式 */
+    .navbar-logo {
+      width: 80px;
+      height: 50px;
+      margin-right: 4rem;
+      margin-left: 4rem;
+    }
+
+    .fb-iframe {
+      width: 80%;
+      height: 150%;
+    }
+
+    .featurette-heading {
+      font-size: 2rem !important;
+      margin-bottom: 2rem;
+    }
+
+    .featurette-divider {
+      margin-top: 150px;
+    }
+
+    /* 手机和其他小屏设备 */
+    @media (max-width: 768px) {
+      .fb-iframe {
+        width: 100% !important;
+        height: 150% !important;
+      }
+
+      .navbar-logo {
+        width: 60px;
+        height: 40px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        /* 可以根据需要调整右边距 */
+      }
+
+      .carousel-item img {
+        height: 150px !important;
+      }
+
+      #myCarousel {
+        height: 150px !important;
+      }
+
+      .lead {
+        font-size: 14px;
+      }
+
+      .featurette-divider {
+        margin-top: 3rem !important;
+        margin-bottom: 60px !important;
+      }
+
+      .featurette-heading {
+        text-align: center;
+      }
+
+      .latest-notify {
+        margin-left: 0px !important;
+      }
+
+      #myVideo {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <!-- Custom styles for this template -->
+  <link href="carousel.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="modal fade" id="exampleModal" style="margin-top:200px;" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">會員登入</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            帳號 <input id="account" class="form-control me-2"
+              style="margin-left: 20px; margin-bottom: 20px; width:80%; display: inline-block;" type="text"
+              placeholder="" aria-label="Search">
+          </div>
+          <div>
+            密碼<input id="pwd" class="form-control me-2"
+              style="margin-left: 20px; margin-bottom: 20px; width:80%; display: inline-block;" type="password"
+              placeholder="" aria-label="Search">
+          </div>
+          <p id="mesg" style="font-size: 12px; color: brown; text-align: center; display:none;">請輸入正確的帳號或密碼</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+          <button id="login" type="button" class="btn btn-outline-success">登入</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const login = document.getElementById("login");
+    const mesg = document.getElementById("mesg");
+    login.addEventListener("click", () => {
+      mesg.style.display = 'none';
+      setTimeout(() => {
+
+        mesg.style.display = 'block';
+      }, 1000)
+    })
+  </script>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <img class="navbar-brand navbar-logo" src="../img/logo.png" alt="">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">專業團隊</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#news">新聞採訪</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#core">核心技術</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#about">關於藝信</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#painter">畫家專訪</a>
+            </li>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#latest-notify">最新消息</a>
+            </li> -->
+
+            <!-- <li class="nav-item">
+              <a class="nav-link">與我們聯絡</a>
+            </li> -->
+
+          </ul>
+          <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+          <form class="d-flex">
+            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              會員登入
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <!-- <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button> -->
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../img/banner_1.png" width="100%" height="100%" alt="Image 1">
+          <div class="container">
+            <div class="carousel-caption text-start">
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="carousel-item">
+          <img src="../img/banner_1.png" width="100%" height="100%" alt="Image 1">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>特徵 x 採集</h1>
+              <p>畫作特徵, 如紙質 顏料 x 特徵值採集系統</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button> -->
+    </div>
+
+    <div class="container marketing">
+      <div class="row">
+
+        <div class="col-lg-3" style="text-align: center; margin-bottom: 60px;">
+          <img src="../img/account_1.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"></img>
+
+          <h2 style="margin-top:24px; font-size:22px">董事長 伍穗華</h2>
+          <p style="margin-bottom:4px; font-size:12px">- 美國亞歷桑納州立大學多媒體教育碩士</p>
+          <p style="margin-bottom:4px; font-size:12px">- 珍藏逸品股份有限公司 董事長</p>
+          <p style="margin-bottom:4px; font-size:12px">- 侏羅紀股份有限公司 設計總監</p>
+          <!-- <p><a class="btn btn-secondary" style="margin-top:24px;" href="#">View details &raquo;</a></p> -->
+        </div>
+
+        <div class="col-lg-3" style="text-align: center; margin-bottom: 60px;">
+          <img src="../img/account_2.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"></img>
+
+          <h2 style="margin-top:24px; font-size:22px">共同創辦人 李承倫</h2>
+          <p style="margin-bottom:4px; font-size:12px">- 亞歷桑納州立大學音樂碩士 主修大提琴</p>
+          <p style="margin-bottom:4px; font-size:12px">- 侏羅紀博物館 館長</p>
+          <p style="margin-bottom:4px; font-size:12px">- 藏逸拍賣 首席拍賣官</p>
+          <p style="margin-bottom:4px; font-size:12px">- EGL歐洲寶石鑑定所 所長</p>
+          <!-- <p><a class="btn btn-secondary" style="margin-top:24px;" href="#">View details &raquo;</a></p> -->
+        </div>
+
+        <div class="col-lg-3" style="text-align: center; margin-bottom: 60px;">
+          <img src="../img/account_3.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"></img>
+
+          <h2 style="margin-top:24px; font-size:22px">共同創辦人 戴章皇</h2>
+          <p style="margin-bottom:4px; font-size:12px">- 國立台灣大學國貿系</p>
+          <p style="margin-bottom:4px; font-size:12px">- 國際信任機器股份有限公司 董事</p>
+          <!-- <p><a class="btn btn-secondary" style="margin-top:24px;" href="#">View details &raquo;</a></p> -->
+        </div>
+
+        <div class="col-lg-3" style="text-align: center; ">
+          <img src="../img/account_4.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"></img>
+
+          <h2 style="margin-top:24px; font-size:22px">共同創辦人 張焜傑</h2>
+          <p style="margin-bottom:4px; font-size:12px">- Smart Tag Inc. 創辦人 (2020-now)</p>
+          <p style="margin-bottom:4px; font-size:12px">- Vibrasee 創辦人 (2019-now)</p>
+          <p style="margin-bottom:4px; font-size:12px">- 美國奇點大學 2018 Fall, Singularity University</p>
+          <p style="margin-bottom:4px; font-size:12px">- 張榮森實驗室 創辦人兼 商務開發/p>
+            <!-- <p><a class="btn btn-secondary" style="margin-top:24px;" href="#">View details &raquo;</a></p> -->
+        </div>
+
+      </div>
+
+
+      <!-- START THE FEATURETTES -->
+      <hr id="news" class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5 order-md-2">
+          <h2>經濟日報專訪</h2>
+          <p class="lead">文化科技躍進 確保藝術品為原件 - AI模型光學與公有區塊鏈產生數位憑證 與實體作品建立物理性聯結 建構高度信任交易環境</p>
+        </div>
+        <div class="col-md-7 order-md-1">
+          <a href="https://money.udn.com/money/story/120601/7534841?utm_source=ednlinemobile&utm_medium=share&fbclid=IwZXh0bgNhZW0CMTAAAR3UwacFyS5kjqMrpG6iDTkKm_frZgwtdOCqFNTKebFwawgtWTn-TqdSmgU_aem_AQCxOQlSJtyinq5zlbdfDeGMev84f7Dvw5E2l-tPZxP5ZXdoeyIPvCgQoxIYDqOFKC7I4ENTBrcHNxoSv7wjXpWu"
+            target="_blank">
+            <img src="../img/news_2.jpg"
+              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+              height="500"></img>
+          </a>
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2>CNA 中央通訊社採訪
+          </h2>
+          <p class="lead">藝術品認證導入區塊鏈 業者交易更安全</p>
+        </div>
+        <div class="col-md-5">
+          <a href="https://www.cna.com.tw/news/ait/202105050357.aspx" target="_blank">
+            <img src="../img/news_1.jpg"
+              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+              height="500"></img>
+          </a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5 order-md-2">
+          <h2>Yahoo! 新聞專欄</h2>
+          <p class="lead">區塊鏈落地應用再下一城 藝術品鑑定履歷上鏈以太坊</p>
+        </div>
+        <div class="col-md-7 order-md-1">
+          <a href="https://tw.sports.yahoo.com/news/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%90%BD%E5%9C%B0%E6%87%89%E7%94%A8%E5%86%8D%E4%B8%8B-%E5%9F%8E-%E8%97%9D%E8%A1%93%E5%93%81%E9%91%91%E5%AE%9A%E5%B1%A5%E6%AD%B7%E4%B8%8A%E9%8F%88%E4%BB%A5%E5%A4%AA%E5%9D%8A-061000902.html"
+            target="_blank">
+            <img src="../img/news_3.jpg"
+              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+              height="500"></img>
+          </a>
+
+        </div>
+      </div>
+
+      <hr id="core" class="featurette-divider">
+
+      <h2 class="featurette-heading" style="margin-top:1rem;">核心技術</h2>
+      <div class="row featurette">
+        <div class="col-md-12 order-md-1">
+          <video id="myVideo" width="100%" controls>
+            <source src="../img/core.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+        </div>
+      </div>
+
+      <hr id="about" class="featurette-divider">
+
+      <!-- iframe -->
+      <div class="row featurette">
+        <div class="col-md-5 order-md-2">
+          <h2 class="featurette-heading" style="margin-top:1rem;">關於藝信</h2>
+          <p class="lead">ART
+            RECORD藝信股份有限公司成立於2021年，以創新的掃描特殊原件特徵AI技術，並與區塊鏈平台技術合作夥伴「國際信任機器股份有限公司」（ITM）的專利區塊鏈技術，提供藝術品區塊鏈存證解決方案（Blockchain
+            Art Solutions）將藝術品特徵上鏈，及可發行藝術品NFT（Non-Fungible Token）非同質化代幣技術（Blockchain-enabled ART），創建藝術品科學可信任的流通平台。</p>
+        </div>
+        <div class="col-md-7 order-md-1">
+          <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/GuVPc4J9qxg?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=GuVPc4J9qxg"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+
+
+        </div>
+      </div>
+
+      <hr id="painter" class="featurette-divider" style="margin-top:150px">
+
+      <!-- iframe -->
+      <div class="row featurette">
+        <div class="col-md-5 order-md-2">
+          <h2 class="featurette-heading" style="margin-top:1rem;">謝明錩老師</h2>
+          <p class="lead">
+            畫作名稱「五金小舖」。<br><br>
+            漫步傳統風味的小鎮中，與歲月痕跡的五金小舖相遇，牆上的金屬器皿反映著金屬的光芒，畫作反映出歷史歲月的痕跡，探索生命的軌跡。
+          </p>
+        </div>
+        <div class="col-md-7 order-md-1">
+          <iframe class="fb-iframe"
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F61551896978181%2Fvideos%2F7284214558281035%2F&show_text=false&width=560&t=0"
+            style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen="true"></iframe>
+        </div>
+      </div>
+
+      <hr class="featurette-divider" style="margin-top:150px">
+
+      <!-- iframe -->
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading" style="margin-top:1rem;">方玥文老師</h2>
+          <p class="lead">
+            畫作名稱「接天蓮葉無窮碧」，取自於楊萬里:「接天蓮葉無窮碧，映日荷花別樣紅。」<br><br>
+            這是一幅滿滿荷葉，高聳蓮花，讓人感受置身於荷花池中；更是一幅接連天際，名稱連結遠古的畫作，連文字都如此有畫面，取名悠然，呼應浩渺無盡萬物生長的創作。
+          </p>
+        </div>
+
+        <div class="col-md-5">
+          <iframe class="fb-iframe" id="fb-video"
+            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F600484248934483%2F&show_text=false&width=520&height=300&t=0"
+            style="border:none; height:150%; width:100%; overflow:hidden" scrolling="no" frameborder="0"
+            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen="true"></iframe>
+        </div>
+
+      </div>
+
+      <hr class="featurette-divider" style="margin-top:150px">
+
+      <!-- iframe -->
+      <div class="row featurette">
+        <div class="col-md-5 order-md-2">
+          <h2 class="featurette-heading" style="margin-top:1rem;">陳秀敏老師</h2>
+          <p class="lead">
+            畫作名稱「紫藤花下漸黃昏做採證紀錄與見證」。<br><br>
+            秀敏老師，擅長以油彩替代東方傳統的筆墨紙硯，展現出東西方藝術交融的意境美。
+            『紫藤花下漸黃昏』是老師在一場紫藤花盛開的季節透過現場寫生記錄下的作品。
+          </p>
+        </div>
+        <div class="col-md-7 order-md-1">
+          <iframe class="fb-iframe"
+            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61551896978181%2Fvideos%2F731602558917961%2F&show_text=false&width=520&height=300&t=0"
+            style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen="true"></iframe>
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider" style="margin-top:150px">
+
+      <!-- iframe -->
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading" style="margin-top:1rem;">成耆仁老師</h2>
+          <p class="lead">
+            是什麼樣的感人故事，改變一位在台灣的韓國學生一生呢?<br>
+            寫下一段韓國學生在台灣師範大學第一位畢業的外籍生<br>
+            老師愛護學生的師恩情，讓「雪泥鴻爪」因此誕生<br><br>
+
+            藝術品的美在它於背後的故事<br>
+            感動人心的故事讓藝術品無價
+          </p>
+        </div>
+        <div class="col-md-5">
+          <iframe width="100%" height="150%"
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F61551896978181%2Fvideos%2F284997777867715%2F&show_text=false&width=560&t=0"
+            style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen="true"></iframe>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- iframe -->
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading" style="margin-top:1rem;">謝麗美老師</h2>
+          <p class="lead">
+            老師在什麼心境下創造出，這幅在黑暗中卻潛藏著美麗色彩的畫作吧！<br><br>
+            畫作名稱「暝色芳荷」，擅長以油彩替代東方傳統的筆墨紙硯，展現出東西方藝術交融的意境美。
+            相信每個畫作都來自畫家的搖籃之手，聽完這麽美麗的創作心境，多麽希望也能擁有這麼動人故事的畫作，讓在黑暗中也有不朽的色彩~
+          </p>
+        </div>
+        <div class="col-md-5 order-md-1" style="text-align: center">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F314011271383017%2F&show_text=false&width=267&t=0"
+            width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen="true"></iframe>
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <!-- /END THE FEATURETTES -->
+    </div>
+
+
+    <!-- 圖片 - 跑馬燈 -->
+    <!-- <h2 id="latest-notify" class="featurette-heading latest-notify"
+      style="margin-top:1rem; margin-left:7rem; font-weight: 400;">最新消息</h2>
+
+    <div class="scrolling-wrapper">
+      <div class="scrolling-content">
+
+        <a href="https://auctionhouse.tw/" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_1.png" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              【藏逸拍賣首創！結合區塊鏈存證與AI辨識技術，保障藝術品交易】
+            </p>
+          </div>
+        </a>
+
+        <a href="https://www.chinatimes.com/realtimenews/20210505005925-260412?chdtv" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_2.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              藝術品認證導入區塊鏈 業者交易更安全
+            </p>
+          </div>
+        </a>
+
+        <a href="https://alive.businessweekly.com.tw/single/Index/ARTL006000774" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_3.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              藝術品市場最夯熱門話題 加密藝術正在崛起!
+            </p>
+          </div>
+        </a>
+
+        <a href="https://www.cna.com.tw/news/ait/202105050357.aspx" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_4.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              藝術品認證導入區塊鏈 業者交易更安全
+            </p>
+          </div>
+        </a>
+
+        <a href="https://news.owlting.com/articles/7126" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_5.png" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              區塊鏈落地應用再下一城 藝術品鑑定履歷上鏈以太坊
+            </p>
+          </div>
+        </a>
+
+        <a href="https://tw.sports.yahoo.com/news/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%90%BD%E5%9C%B0%E6%87%89%E7%94%A8%E5%86%8D%E4%B8%8B-%E5%9F%8E-%E8%97%9D%E8%A1%93%E5%93%81%E9%91%91%E5%AE%9A%E5%B1%A5%E6%AD%B7%E4%B8%8A%E9%8F%88%E4%BB%A5%E5%A4%AA%E5%9D%8A-061000902.html"
+          target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_6.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              區塊鏈落地應用再下一城 藝術品鑑定履歷上鏈以太坊
+            </p>
+          </div>
+        </a>
+
+        <a href="https://artnews.freedom-men.com/archives/31430" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_7.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              NFT 將帶來藝術經紀制度的變革
+            </p>
+          </div>
+        </a>
+
+        <a href="https://www.techbang.com/posts/90439-what-exactly-is-nft-in-the-new-wave-of-digital-technology-art"
+          target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_8.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              數位科技藝術新浪潮，帶你看懂 NFT 到底是什麼？
+            </p>
+          </div>
+        </a>
+
+        <a href="https://www.gvm.com.tw/article/81246" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_9.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              疫情炒熱NFT、數位貨幣，從藝術創作到區塊鏈創新
+            </p>
+          </div>
+        </a>
+
+        <a href="https://www.voguehk.com/zh/article/art-lifestyle/interview-ruby-gloom-nft-art/" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_10.png" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              專訪香港 CGI 代表 Ruby Gloom
+            </p>
+          </div>
+        </a>
+
+        <a href="https://hypebeast.com/hk/2021/4/takashi-murakami-launches-first-nft-artwork" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_11.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              村上隆 首個 NFT 數碼藝術系列正式發佈
+            </p>
+          </div>
+        </a>
+
+        <a href="https://www.moneyweekly.com.tw/Magazine/Info/%E7%90%86%E8%B2%A1%E5%91%A8%E5%88%8A/74662/"
+          target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_12.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              NFT如火如荼發展 台灣跟上世界潮流？
+            </p>
+          </div>
+        </a>
+
+        <a href="https://www.18hall.com/what-is-nft/" target="_blank">
+          <div style="margin-right:10px;">
+            <img src="../img/slider_13.jpg" alt="Image 1">
+            <p
+              style="margin-top:1px; text-align: center; border-radius: 10px; background-color: #6c757d; font-size: 12px; color:#fff">
+              一張jpg賣到5億港元！
+            </p>
+          </div>
+        </a>
+
+      </div>
+    </div> -->
+
+
+    <!-- FOOTER -->
+    <footer style="margin-top: 100px; background-color: #2f2f3a; color:aliceblue">
+      <div style="padding:20px;">
+
+        <p class="float-end">
+          <a href="#" style="color:aliceblue">Back to top</a>
+        </p>
+
+        <p>&copy; 2017–2024 Company, Inc. &middot;
+          <a href="#" style="color:aliceblue">Privacy Terms</a>
+        </p>
+
+      </div>
+    </footer>
+
+  </main>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollingWrapper = document.querySelector('.scrolling-wrapper');
+      const scrollingContent = document.querySelector('.scrolling-content');
+
+      scrollingWrapper.addEventListener('mouseover', function () {
+        scrollingContent.style.animationPlayState = 'paused';
+      });
+
+      scrollingWrapper.addEventListener('mouseout', function () {
+        scrollingContent.style.animationPlayState = 'running';
+      });
+    });
+  </script>
+
+</body>
+
+</html>

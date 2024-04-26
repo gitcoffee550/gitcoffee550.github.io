@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seamless Continuous Slider with Interactions</title>
+    <style>
+        .scrolling-wrapper {
+            display: flex;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scrolling-content {
+            display: flex;
+            width: calc(300% + 800px); /* Adjust based on your content */
+            animation: scroll 30s linear infinite;
+        }
+
+        .scrolling-wrapper img {
+            width: calc(100vw / 3);
+            height: auto;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-200vw); /* Adjust based on your content */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scrolling-wrapper">
+    <div class="scrolling-content">
+        <a href="https://example.com/1" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+1" alt="Image 1">
+        </a>
+        <a href="https://example.com/2" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+2" alt="Image 2">
+        </a>
+        <a href="https://example.com/3" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+3" alt="Image 3">
+        </a>
+        <a href="https://example.com/1" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+1" alt="Image 1">
+        </a>
+        <a href="https://example.com/2" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+2" alt="Image 2">
+        </a>
+        <a href="https://example.com/3" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+3" alt="Image 3">
+        </a>
+        <a href="https://example.com/1" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+1" alt="Image 1">
+        </a>
+        <a href="https://example.com/2" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+2" alt="Image 2">
+        </a>
+        <a href="https://example.com/3" target="_blank">
+            <img src="https://via.placeholder.com/800x300?text=Image+3" alt="Image 3">
+        </a>
+        <!-- Repeat images as necessary -->
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollingWrapper = document.querySelector('.scrolling-wrapper');
+        const scrollingContent = document.querySelector('.scrolling-content');
+
+        scrollingWrapper.addEventListener('mouseover', function() {
+            scrollingContent.style.animationPlayState = 'paused';
+        });
+
+        scrollingWrapper.addEventListener('mouseout', function() {
+            scrollingContent.style.animationPlayState = 'running';
+        });
+    });
+</script>
+
+</body>
+</html>
