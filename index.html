@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sidIndex</title>
+    <title>藝信</title>
     <link rel="stylesheet" type="text/css" href="./homePage/top.css" />
     <link rel="stylesheet" type="text/css" href="./homePage/block.css" />
     <link rel="stylesheet" type="text/css" href="./homePage/panel.css" />
@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="./homePage/certificate.css" />
     <link rel="stylesheet" type="text/css" href="./homePage/nav.css" />
     <link rel="stylesheet" type="text/css" href="./homePage/signup&login.css" />
+    <link rel="stylesheet" type="text/css" href="./homePage/footers.css" />
 
     <style>
         html,
@@ -38,9 +39,9 @@
         <div class="navOpt">
             <a href="#proTeam">專業團隊</a>
             <!-- <a>關於藝信</a> -->
-            <!-- <a href="#news1">相關文章</a>
-            <a href="#artist">畫家專訪</a> -->
-            <!-- <a>聯絡我們</a> -->
+            <a href="#news1">相關文章</a>
+            <a href="#artist">畫家專訪</a>
+            <a href="#contactUs">聯絡我們</a>
         </div>
 
         <div class="navPerson" id="navPersonIcon">
@@ -63,7 +64,7 @@
             <div class="inputBox">
                 <input type="text" required="" placeholder="Password">
             </div>
-            <div class="links">
+            <div class="links" style="display: none;">
                 <a href="#">Forgot Password</a>
                 <a href="#" id="signupLink">Signup</a>
             </div>
@@ -73,7 +74,7 @@
         </div>
     </div>
     <!-- ----------------------------------- 頂部畫 -->
-    <div class="P-container" style="display: none;">
+    <!-- <div class="P-container" >
         <div class="photo-container">
             <img class="photo" src="https://i.imgur.com/R96QuPx.png" alt="Photo 1">
             <img class="photo" src="https://i.imgur.com/s9kkyyS.png" alt="Photo 2">
@@ -95,13 +96,13 @@
             <img class="photo" src="https://i.imgur.com/sanntZI.png" alt="Photo 7">
             <img class="photo" src="https://i.imgur.com/rpOa1u8.png" alt="Photo 8">
         </div>
-    </div>
+    </div> -->
     <div style="height: 10vw;"></div>
     <div class="logo">
         <img src="./img/logo (3).png">
     </div>
     <div class="topHeading">
-        AI智慧認證 信任加持
+        智慧認證 信任加持
     </div>
     <div class="topLine"></div>
 
@@ -339,7 +340,7 @@
 
     <!-- -------------------------------------- News  -->
 
-    <!-- <div id="news1"></div>
+    <div id="news1"></div>
     <div class="topic">最新消息</div>
 
     <div class="carousel-container">
@@ -349,15 +350,15 @@
             </div>
         </div>
         <button class="arrow next"><img src="./img/btn.png"></button>
-    </div> -->
+    </div>
 
     <!-------------------------------畫家專訪  -->
-    <!-- <div id="artist"></div>
+    <div id="artist"></div>
     <div class="topic">畫家專訪</div>
 
     <div id="artistConatiner">
-
-    </div> -->
+       
+    </div>
 
 
 
@@ -370,18 +371,18 @@
 
 
     <!-- -----------------------------長期夥伴關係 -->
-    <div class="topic partnerHead" style="display: none;">長期夥伴關係</div>
+    <div class="topic partnerHead">長期夥伴關係</div>
 
 
 
-    <div class="partnerBar" style="display: none;">
+    <div class="partnerBar">
         <div class="partnerBox active" data-tab="1">
             <img src="./img/Logo拷貝.png">
             <div class="indicator"></div>
         </div>
 
         <div class="partnerBox " data-tab="2">
-            <img src="./img/Tab.png">
+            <img src="./img/dkjsnk.png">
             <div class="indicator"></div>
         </div>
 
@@ -405,9 +406,9 @@
 
 
     <!-- content  -->
-    <div class="partnerContainer" style="display: none;">
+    <div class="partnerContainer">
         <div class="partnerContent active" data-tab="1">
-            <div class="partnerContentL">
+            <!-- <div class="partnerContentL">
                 <div class="partnerContentL-1">
                     1992
                     <div class="partnerContentL-2">
@@ -421,7 +422,7 @@
                         畫廊會員數
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="partnerContentR">
                 1980
@@ -429,29 +430,39 @@
             </div>
         </div>
         <div class="partnerContent" data-tab="2">
-            <div>2</div>
+            <div class="partnerContentR">翔輝運通 提供一個藝術物流服務平台給亞洲國家級、私人博物館及美術館和收藏家；服務國際間展覽運輸與專業人力佈卸展等相關企劃及專業服務，並提供包裝運輸建議，為專案需求量身訂做包裝，確保運輸期間完善的保護。
+                憑藉世界一流、博物館等級的專業服務以及在大中華和臺灣地區的穩健合作關係，翔輝運通成為博物館、畫廊、拍賣行和收藏家的一站式解決方案。
+                </div>
         </div>
         <div class="partnerContent" data-tab="3">
-            <div>3</div>
+            <div class="partnerContentR">宣城科技股份有限公司成立於1996年12月，主要從事噴墨介質產品銷售及紙張複捲裁切加工服務，並隨著時代演變，持續擴展數位影像及文創產品相關應用。宣城全體員工，始終秉持專業、品質、服務理念，不遺餘力提升數位列印品質，公司形象暨產品品質，承蒙市場諸多肯定，建立良好的口碑。</div>
         </div>
         <div class="partnerContent" data-tab="4">
-            <div>4</div>
+            <div class="partnerContentR" >藏逸拍賣立足台灣，放眼世界，辦事處遍布全球，包含台灣、紐約、日本、上海、香港共五處，並陸續增設中。並且連續十年舉辦多場拍賣會，包含現當代藝術、璀璨珠寶、古董...等品項。
+                藏逸拍賣堅守熱誠專業、卓越服務、商業觸覺、誠信可靠、團隊合作及創新精神等核心價值， 提供拍賣、私人洽購、 免費估值諮詢等最豐富、具前瞻性的顧問服務。</div>
         </div>
         <div class="partnerContent" data-tab="5">
-            <div>5</div>
+            <div class="partnerContentR">絢彩藝術中心是依附於侏羅紀集團的藝術研究中心。最初是為了侏羅紀集團的藍圖而設立的，於2020年作為項目研究所成立。專注於研究現代藝術、亞洲和西方當代藝術，同時探索和拓展油畫領域，中國水墨畫和雕塑物品。 “XUan” 一詞源自於藝術珠寶燦爛的光芒，我們秉持著對藝術收藏的熱切精神。通過收購重要藏家的畫作，並深入研究當代歷史和當前國際市場，為藝術和文化的發展承擔社會責任。</div>
         </div>
 
     </div>
 
 
+<!-- -----------------------------footers -->
+<div class="topic partnerHead" id="contactUs">聯絡我們</div>
+
+<div class="footersBg" >
+        <a href="https://www.facebook.com/p/%E8%97%9D%E4%BF%A1-ART-Record-61551896978181/"><img src="./img/fb_in_footer.svg"></a>
+        <a href="https://www.instagram.com/art.record.ig/"><img src="./img/ig_in_footer.svg"></a>
+</div>
 
 
 
 
 
-
+    
     <!-- -----------------------------script -->
-    <script src="./homePage/"></script>
+    <script src="./homePage/block.js"></script>
     <script src="./homePage/news.js"></script>
     <script src="./homePage/artist.js"></script>
     <script src="./homePage/partner.js"></script>

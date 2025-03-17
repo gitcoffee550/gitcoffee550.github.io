@@ -10,7 +10,7 @@
 
 @media (max-width: 768px) {
   .partnerBar{
-    width: 100%;
+    width: 100vw;
     /* height:42.44px; */
     gap:1%;
     overflow-y: hidden;
@@ -128,7 +128,7 @@
 
 @media (max-width: 768px) {
     .partnerContainer {
-        width: 100%;
+        width: 100vw;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }

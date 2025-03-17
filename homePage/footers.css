@@ -8,7 +8,6 @@
     gap:10vw;
     background: rgba(233, 246, 254, 0.8); /* 80% 透明度 */
     backdrop-filter: blur(10px); /* 玻璃模糊 */
-    border-radius: 15px; /* 圓角 */
     padding: 20px;
     box-sizing: border-box;
 }

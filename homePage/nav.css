@@ -1,6 +1,6 @@
 .navbar {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     /* 固定位置 */
     top: 0;
     /* 緊貼螢幕頂部 */
