@@ -7,11 +7,12 @@
     grid-template-columns: 32% 66%; /* 兩欄 */
     grid-template-rows: 25% 75%; /* 兩行 */
     margin-top:4vw;
-    overflow-x: hidden;
+   
 }
 
 .artistC.right{
     grid-template-columns: 70% 32%; /* 兩欄 */
+    overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
