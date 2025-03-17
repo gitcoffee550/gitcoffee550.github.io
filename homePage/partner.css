@@ -91,7 +91,6 @@
 }
 
 .partnerContentL {
-    height: 187px;
     width: 25vw;
     display: flex;
     flex-direction: column;
@@ -117,8 +116,8 @@
     width: auto;
     height: auto;
     flex-wrap: wrap;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 40px;
     letter-spacing: 1.2px;
 
 }
@@ -130,41 +129,36 @@
 @media (max-width: 768px) {
     .partnerContainer {
         width: 100%;
-        height: 192px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
 
     .partnerContent.active {
-        gap: 24px;
+        gap: 6vw;
     }
 
     .partnerContentL {
-        height: 94px;
-        width: 64px;
-        gap: 18px;
+        width: 17vw;
+        gap: 4.5vw;
     }
     
     .partnerContentL-1 {
-        font-size: 14px;
-        line-height: 18.2px;
+        font-size: 4vw;
+       
     }
     
     .partnerContentL-2 {
         font-weight: 300;
-        font-size: 12px;
-        line-height:18px;
-        letter-spacing:0.8px;
+        font-size:3vw;
     }
     
     .partnerContentR {
-        width: 273px;
+        width: 70vw;
         font-size: 12px;
-        line-height: 18px;
-        letter-spacing: 0.8px;
+        line-height: 28px;
     }
 
     .partnerHead{
-        margin-top:56px;
+        margin-top:14vw;
     }
 }

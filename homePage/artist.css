@@ -4,13 +4,14 @@
     width: 100%;
     height: 47vw;
     margin-bottom: 10px;
-    grid-template-columns: 32% 68%; /* 兩欄 */
+    grid-template-columns: 32% 66%; /* 兩欄 */
     grid-template-rows: 25% 75%; /* 兩行 */
     margin-top:4vw;
+    overflow-x: hidden;
 }
 
 .artistC.right{
-    grid-template-columns:68% 32%; /* 兩欄 */
+    grid-template-columns: 70% 32%; /* 兩欄 */
 }
 
 @media (max-width: 768px) {
@@ -71,6 +72,7 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    gap:1vw;
 }
 
 .artistCWord.right{
@@ -122,6 +124,15 @@
     
 }
 
+.ellipseBg{
+    position: absolute;
+    width: 10vw;
+    height: fit-content;
+    bottom: 0;
+    left: -2vw;
+    z-index: -1;
+    display: none;
+}
 
 
 

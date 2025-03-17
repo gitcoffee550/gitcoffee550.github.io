@@ -8,6 +8,11 @@
     margin-top:3vw;
 }
 
+.carousel-container a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 .carousel-wrapper {
     width: 86.5vw;
     overflow: hidden;
@@ -28,7 +33,7 @@
         margin-top:19px;
     }
     .carousel-wrapper {
-        width: 100%;
+        width: 95%;
         height: fit-content;
     }
     .carousel-items {
@@ -57,8 +62,8 @@
 }
 
 
-.carousel-item:nth-child(3n+2),
-.carousel-item:nth-child(3n+3) {
+.carousel-items a:nth-child(3n+2),
+.carousel-items a:nth-child(3n+3) {
     margin-left: 2vw;
 }
 

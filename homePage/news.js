@@ -1,40 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
     const newsContent = [
         {
-            agency:"CNN",
-            title: "藝術的影響力：解析現代油畫趨勢",
-            date: "2024/01/15",
-            imageUrl: "../img/relatedArticles1.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
+            agency:"中央通訊社",
+            title: "藝術品認證導入區塊鏈 業者交易更安全",
+            date: "2025/03/06",
+            imageUrl: "../img/482795685_17914946868077462_2052051537771332291_n.jpg",
+            newsC: "以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。",
+            articleUrl:"https://tw.news.yahoo.com/%E8%97%9D%E8%A1%93%E5%93%81%E8%AA%8D%E8%AD%89%E5%B0%8E%E5%85%A5%E5%8D%80%E5%A1%8A%E9%8F%88-%E6%A5%AD%E8%80%85%E4%BA%A4%E6%98%93%E6%9B%B4%E5%AE%89%E5%85%A8-121423477.html"
+
+
         },
         {
-            agency:"公民新聞",
-            title: "畫布上的夢想：當代藝術家的創作歷程",
-            date: "2024/02/10",
-            imageUrl: "../img/relatedArticles2.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
+            agency:"藝信",
+            title: "花絮回顧｜藝信亮相亞洲最大創業盛會 Meet Taipei",
+            date: "2025/02/27",
+            imageUrl: "../img/482363972_17914190457077462_5689976194794848157_n.jpg",
+            newsC: "2024 Meet Taipei 創新創業嘉年華匯聚來自全球的創新團隊、投資人及產業專家，共同探索技術與市場趨勢。藝信於去年 11 月 22 日參展，展示 「藝術指紋」技術，並與業界專家深度交流，共同探討數位鑑證技術如何改變藝術市場。",
+            articleUrl:"https://www.facebook.com/share/p/1654CFPtLV/"
         },
         {
-            agency:"自由時報",
-            title: "色彩的魔法：解析水彩藝術的魅力",
-            date: "2024/03/05",
-            imageUrl: "../img/relatedArticles3.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
+            agency:"藝信",
+            title: "數位指紋｜這件作品，還是原來的那一件嗎？",
+            date: "2024/02/20",
+            imageUrl: "../img/480657483_17912990667077462_94806702073237062_n.jpg",
+            newsC: "「在藝術市場中，作品的真偽與溯源至關重要。我們運用 數位顯微鏡 和 AI 技術，為每件藝術品建立無法篡改的數位履歷，確保作品的真實性與可追溯性。",
+            articleUrl:"https://www.facebook.com/share/p/1FQvoCUpMP/"
         },
-        {
-            agency:"CNN",
-            title: "抽象與現實：探索藝術的界限",
-            date: "2024/03/20",
-            imageUrl: "../img/relatedArticles1.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        },
-        {
-            agency:"CNN",
-            title: "油畫技巧揭秘：如何掌握筆觸與色彩",
-            date: "2024/04/02",
-            imageUrl: "../img/relatedArticles2.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        }
     ];
 
     const newsItem = document.getElementById("newsItem");
@@ -80,7 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
         carouselitem.appendChild(newsTopic);
         carouselitem.appendChild(newsC);
 
-        fragment.appendChild(carouselitem);
+        const url = document.createElement("a");
+        url.href = news.articleUrl; // 設定超連結
+        url.appendChild(carouselitem)
+        fragment.appendChild(url);
     })
     newsItem.appendChild(fragment);
 });

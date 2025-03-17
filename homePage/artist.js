@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             artworkData: [
                 { title: "秋分 (2021)", material: "複合媒材", size: "70.0 x 70.0 cm", date: "2024/12/01", imageUrl: "../img/art3.png" },
                 { title: "小丘 (2021)", material: "複合媒材", size: "48.0 x 74.0 cm", date: "2024/12/01", imageUrl: "../img/image.png" },
-                { title: "晨曦 (2021)", material: "水彩", size: "50.0 × 40.0", date: "2024/12/01", imageUrl: "../img/art3.png" },
+                
             ]
         },
         {
@@ -22,9 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "謝明錩 老師",
             intro: "以水彩細膩描繪生活角落，題材涵蓋花卉、鮮果、農家與自然景色，結合寫實與詩意，畫作洋溢陽光溫暖氣息。他以創新技法與深厚情感注入，強調「意念帶來技巧，技巧形成風格」，展現當代藝術的人文之美，讓觀者沉浸於詩意與故事交織的水彩世界。",
             artworkData: [
-                { title: "小漁村 (2021)", material: "油畫", size: "22.5 × 15.5", date: "2024/12/01", imageUrl: "../img/art1.png" },
-                { title: "秋分 (2021)", material: "複合媒材", size: "70.0 × 70.0", date: "2024/12/01", imageUrl: "../img/art2.png" },
-                { title: "晨曦 (2021)", material: "水彩", size: "50.0 × 40.0", date: "2024/12/01", imageUrl: "../img/art3.png" }
+                { title: "清流 (2021)", material: "", size: "38.0 × 25.5 cm", date: "2024/12/01", imageUrl: "../img/image拷貝.png" },
+                { title: "希臘神殿 (2021)", material: "水彩", size: "48.0 x 74.0 cm", date: "2024/12/01", imageUrl: "../img/Card拷貝.png" },
             ]
         },
         {
@@ -33,35 +32,25 @@ document.addEventListener("DOMContentLoaded", function () {
             intro: "國立歷史博物館藝術史博士，現任國立臺灣藝術大學造型藝術研究所副教授，精通瓷器收藏與中國器物鑑賞研究，對亞洲藝術文化深具造詣。曾多次策劃國際研討會與展覽，並發表數十篇學術論文與專著，致力推廣陶瓷藝術與文化遺產研究。",
             artworkData: [
                 {
-                    title: "小漁村 (2021)",
-                    material: "油畫",
-                    size: "22.5 × 15.5",
+                    title: "雪泥鴻爪冊頁集(2021)",
+                    material: "水墨 設色 紙本",
+                    size: "48.0 x 74.0 cm",
                     date: "2024/12/01",
-                    imageUrl: "../img/art1.png"
+                    imageUrl: "../img/image拷貝2.png"
                 },
+               
                 {
-                    title: "秋分 (2021)",
-                    material: "複合媒材",
-                    size: "70.0 × 70.0",
+                    title: "雪泥鴻爪冊頁集(2021)",
+                    material: "水墨 設色 紙本",
+                    size: "48.0 x 74.0 cm",
                     date: "2024/12/01",
-                    imageUrl: "../img/art2.png"
+                    imageUrl: "../img/image拷貝2.png"
                 },
-                {
-                    title: "晨曦 (2021)",
-                    material: "水彩",
-                    size: "50.0 × 40.0",
-                    date: "2024/12/01",
-                    imageUrl: "../img/art3.png"
-                },
-                {
-                    title: "晨曦 (2021)",
-                    material: "水彩",
-                    size: "50.0 × 40.0",
-                    date: "2024/12/01",
-                    imageUrl: "../img/art3.png"
-                },
+               
             ]
         },
+
+        
         
     ];
 
@@ -79,6 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const img = document.createElement("img");
         img.src = artist.imgUrl;
         photoDiv.appendChild(img);
+
+        const ellipseBg = document.createElement("img");
+        ellipseBg.className="ellipseBg";
+        ellipseBg.src = "../img/Ellipse 1.png";
+        photoDiv.appendChild(ellipseBg);
+
+
 
         // 文字介紹
         const wordDiv = document.createElement("div");

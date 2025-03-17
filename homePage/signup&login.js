@@ -59,7 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isSignup) {
             alert("註冊失敗！");
         } else {
-            alert("登入失敗！");
+            setTimeout(() => {
+                alert("登入失敗！");
+            }, 1000);
         }
     });
 
