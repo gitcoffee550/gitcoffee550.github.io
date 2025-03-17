@@ -1,13 +1,15 @@
-.footersBg{
+.footersBg {
     width: 100%;
     height: 8vw;
     margin-top: 1vw;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap:10vw;
-    background: rgba(233, 246, 254, 0.8); /* 80% 透明度 */
-    backdrop-filter: blur(10px); /* 玻璃模糊 */
+    gap: 10vw;
+    background: rgba(233, 246, 254, 0.8);
+    /* 80% 透明度 */
+    backdrop-filter: blur(10px);
+    /* 玻璃模糊 */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -15,5 +17,16 @@
 
 
 .footersBg img {
-   height:5vw;
+    height: 5vw;
+}
+
+@media (max-width: 768px) {
+    .footersBg {
+        height: 11vw
+    }
+
+    .footersBg img {
+        height: 8vw;
+    }
+
 }
